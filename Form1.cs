@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace 重命名助手
@@ -42,7 +37,7 @@ namespace 重命名助手
             {
                 if (files[i].Name == newNames[i])
                     continue;
-                FileUtil.Rename(files[i], newNames[i]);
+                newNames[i] = FileUtil.Rename(files[i], newNames[i]);
                 log.AppendLine(files[i].Name + " --> " + newNames[i]);
             }
             this.textBox内容.Text = log.ToString();
